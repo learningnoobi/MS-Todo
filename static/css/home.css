@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&family=Montserrat&display=swap");
+
+:root {
+  --flamenco: "Flamenco", cursive;
+  --monst: "Montserrat", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--monst);
+  background: #222;
+
+  color: snow;
+}
+
+.sidebar {
+
+  color: white;
+  width: 250px;
+  background-color: #333;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 19px;
+  text-decoration: none;
+
+}
+.addtaskbtn {
+  position: fixed;
+  padding: 8px 22px;
+  bottom:50px;
+  right: 70px;
+  font-weight: 800;
+  font-size: 30px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.addtaskbtn:hover {
+  background: gray;
+}
+ 
+.sidebar a.active {
+  background-color: gray;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 10px 16px;
+  
+}
+.heading{
+  display: none;
+}
+.down{
+  border-bottom: 1px solid gray;
+}
+.alerts{
+  width: 80%;
+  margin: auto;
+  border:none;
+  margin-top: 16px;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .down{
+  border-bottom:none;
+}
+  .todos{
+    display: none;
+  }
+  .sidebar a {
+    float: left;
+
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .heading{
+  display: block;
+}
+}
+
+@media screen and (max-width: 501px) {
+   .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .alerts{
+  width: 100%;
+}
+  .name{
+    display: none;
+  }
+  .down{
+  border-bottom:none;
+}
+.heading{
+  display: block;
+}
+  .todos{
+    display: none;
+  }
+  .sidebar a {
+    float: left;
+   
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
