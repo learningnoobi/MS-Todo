@@ -12,9 +12,13 @@
     	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Tasks</a>
     	{% for task in side_tasks %}
         <a><i class="fa fa-bars" style="margin-right:10px;"></i>{{task.title}}</a>
-    
+        
+       {% empty %}
+       <a href="#about" class="down" style=""><i class="fa fa-bars" style="margin-right:10px;"></i><span class="name">No tasks</span></a>
         {% endfor %}
+
     </span>
+       <a class="active" href="{% url 'logout' %}">Logout</a>
 </div>
 
  <div class="addtaskbtn" data-toggle="modal" data-target="#exampleModal">
@@ -45,8 +49,15 @@
 
    {% for task in tasks %}
   <div class="alert alert-warning alerts" style="">
-  	 {{task.title}}
+    <!--  {% if is_favourite %}
+  	<i class="fa fa-star imp" ></i> {{task.title}}
+    {% else %}
+    <i class="fa fa-star" style="color: red" ></i> -->{{task.title}} 
+    {% endif %}
   </div>
+   {% empty %}
+        <div class="alert alert-info"> fuck you add task you bitch</div>
+        
    {% endfor %}
 
 </div>

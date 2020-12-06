@@ -126,3 +126,9 @@ body {
     margin-left: 0;
   }
 }
+.imp{
+  color: gray;
+}
+.imp:hover{
+  color: red;
+}
