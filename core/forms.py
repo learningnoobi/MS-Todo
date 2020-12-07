@@ -10,6 +10,6 @@ class PostForm(ModelForm):
                     ))
 	class Meta:
 		model = Task
-		fields ={'title','detail'}
+		fields =['title','detail']
 	
 

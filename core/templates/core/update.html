@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+    <div class="nice
+    ">
+      <form method="POST" action="">
+      {% csrf_token %}
+      {{form|crispy}}
+     </div>
+     <div class="footer">
+      <button class="btn btn-success"><i class="fa fa-check" id="save"></i></button>
+  </div>
