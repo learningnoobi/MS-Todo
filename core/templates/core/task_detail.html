@@ -4,13 +4,13 @@
 {% block content %}
 
 <div class="sidebar">
-      <a href="#" class="todos">MS Todo</a>
+      <a href="{% url 'home' %}" class="todos">MS Todo</a>
       <a class="active" href="#home"><i class="fa fa-user" style="margin-right:10px;"></i><span class="name">{{request.user}}</span></a>
       <a href="#news"><i class="fa fa-star" style="margin-right:10px;"></i><span class="name">Important</a>
-      <a href="#contact" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" style="margin-right:10px;"></i><span class="name">Add Task</span></a>
+      <a href="#contact" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" style="margin-right:10px;"></i><span class="name">Tasks</span></a>
       <a href="#about" class="down" style=""><i class="fa fa-eye" style="margin-right:10px;"></i><span class="name">Date</span></a>
     <span class="todos">
-      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Your tasks</a>
+      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Tasks</a>
       	{% for task in side_tasks %}
           <a><i class="fa fa-bars" style="margin-right:10px;"></i>{{task.title}}</a>
           
@@ -21,41 +21,22 @@
        <a class="active" href="{% url 'logout' %}">Logout</a>
 </div>
 
- <div class="addtaskbtn" data-toggle="modal" data-target="#exampleModal">
-        +
- </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content" style="background-color: #222;">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-              	<form method="POST" action="">
-              	{% csrf_token %}
-                {{form|crispy}}
-                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i></button>
-              </form>
-               </div>
-           
-              </div>
-            </div>
-        </div>
-              
+ 
   <div class="content">     
-      {% for task in tasks %}
+     
           <div class="alert alert-info alerts" style="background-color: #333; color: white;">    
-            <a href="{% url 'detail' task.id %}">{{task.title}} </a> 
+            {{task.title}} 
+             
             <div class="float-right" style="margin-top: -6px;">
                 <span class="alert" style="padding:8px 8px; background-color: #333;">{{ task.created }}</span>
                 <button  data-toggle="modal" data-target="#updatemodal" class="btn btn-secondary" >Edit</button>
                 <button  data-toggle="modal" data-target="#deletemodal" class="btn btn-danger"><i class="fa fa-trash"></i></button>             
             </div>
-             </div>
-
+            <div class="alert alert-info alerts" style="background-color: #444; color: white;">   
+              {{ task.detail }} 
+            </div>
+            </div>
+            
          <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content" style="background-color: #222;">
@@ -103,13 +84,6 @@
             </div>
         </div>
 
-
-       {% empty %}
-            <div class="alert alert-info"> Add task to show here !</div>
-            <div style="display: flex;justify-content: center;">
-              <img src="{% static 'images/note.svg' %}" style="width: 50%;">
-            </div>
        
-       {% endfor %}
   </div>
 {% endblock %}
