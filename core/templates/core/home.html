@@ -7,10 +7,10 @@
       <a href="#" class="todos">MS Todo</a>
       <a class="active" href="#home"><i class="fa fa-user" style="margin-right:10px;"></i><span class="name">{{request.user}}</span></a>
       <a href="#news"><i class="fa fa-star" style="margin-right:10px;"></i><span class="name">Important</a>
-      <a href="#contact" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" style="margin-right:10px;"></i><span class="name">Tasks</span></a>
+      <a href="#contact" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" style="margin-right:10px;"></i><span class="name">Add Task</span></a>
       <a href="#about" class="down" style=""><i class="fa fa-eye" style="margin-right:10px;"></i><span class="name">Date</span></a>
     <span class="todos">
-      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Tasks</a>
+      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Your tasks</a>
       	{% for task in side_tasks %}
           <a><i class="fa fa-bars" style="margin-right:10px;"></i>{{task.title}}</a>
           
@@ -104,7 +104,7 @@
 
 
        {% empty %}
-            <div class="alert alert-info"> You haven't added any task yet !</div>
+            <div class="alert alert-info"> Add task to show here !</div>
             <div style="display: flex;justify-content: center;">
               <img src="{% static 'images/note.svg' %}" style="width: 50%;">
             </div>
