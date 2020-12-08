@@ -47,10 +47,11 @@
               
   <div class="content">     
       {% for task in tasks %}
-          <div class="alert alert-info alerts" style="">    
-            {{task.title}} 
-            <div class="float-right">
-                <button  data-toggle="modal" data-target="#updatemodal" class="btn btn-info">Edit</button>
+          <div class="alert alert-info alerts" style="background-color: #333; color: white;">    
+            {{task.title}}  
+            <div class="float-right" style="margin-top: -6px;">
+                <span class="alert" style="padding:8px 8px; background-color: #333;">{{ task.created }}</span>
+                <button  data-toggle="modal" data-target="#updatemodal" class="btn btn-secondary" >Edit</button>
                 <button  data-toggle="modal" data-target="#deletemodal" class="btn btn-danger"><i class="fa fa-trash"></i></button>             
             </div>
              </div>
