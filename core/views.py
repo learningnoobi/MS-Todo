@@ -4,10 +4,10 @@ from django.http import HttpResponseRedirect
 from.forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView,DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.decorators.csrf import csrf_exempt
+
 
 @login_required(login_url='login')
 def home(request):
@@ -53,6 +53,17 @@ def UpdateView(request,pk):
 			return redirect('home')
 	context = {"form":form}
 	return render(request,'core/update.html',context)
+
+
+class DetailView(DetailView):
+    model = Task
+
+
+
+ 
+	
+
+
 
 
 def delete(request,pk):
