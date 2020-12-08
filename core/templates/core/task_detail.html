@@ -32,9 +32,13 @@
                 <button  data-toggle="modal" data-target="#updatemodal" class="btn btn-secondary" >Edit</button>
                 <button  data-toggle="modal" data-target="#deletemodal" class="btn btn-danger"><i class="fa fa-trash"></i></button>             
             </div>
-            <div class="alert alert-info alerts" style="background-color: #444; color: white;">   
+             {% if task.detail %}  
+            <div class="alert alert-info alerts" style="background-color: #444; color: white;"> 
+           
               {{ task.detail }} 
+            
             </div>
+            {% endif %}
             </div>
             
          <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

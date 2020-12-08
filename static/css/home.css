@@ -11,7 +11,13 @@ body {
 
   color: snow;
 }
-
+a{
+  color: white;
+}
+a:hover{
+  color: gainsboro;
+  text-decoration: none;
+}
 .sidebar {
 
   color: white;
