@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from .views import *
 
 urlpatterns = [
-    path('register', views.registerPage , name = "register"),
-    path('login', views.loginPage , name = "login"),
-    path('logout', views.logoutUser , name = "logout"),
+    path('register/', views.registerPage , name = "register"),
+    path('login/', views.loginPage , name = "login"),
+    path('logout/', views.logoutUser , name = "logout"),
    ]

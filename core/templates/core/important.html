@@ -3,34 +3,45 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+
 {% include 'core/sidebar.html' %}
 
- 
-  <div class="content">     
-    <div class="alert alert-info alerts" style="background-color: #333; color: white;">    
-            {{task.title}} 
-             
+ <div class="addtaskbtn" data-toggle="modal" data-target="#exampleModal">
+        +
+ </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #222;">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              	<form method="POST" action="">
+              	{% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i></button>
+              </form>
+               </div>
+           
+              </div>
+            </div>
+        </div>
+              
+  <div class="content">    
+  <div class="alert alert-danger" style="background:gray;color:white;border:none;">Important List</div> 
+      {% for task in imp_list %}
+          <div class="alert alert-info alerts" style="background-color: #333; color: white;">    
+            <a href="{% url 'detail' task.id %}">{{task.title}} </a> 
             <div class="float-right" style="margin-top: -6px;">
                 <span class="alert" style="padding:8px 8px; background-color: #333;">{{ task.created|timesince }}</span>
-                {% if is_important %}
-                  <a class="btn btn-success" href="{% url 'add' task.id %}"><i class="fa fa-star"></i></a> 
-                {% else %}
-                  <a class="btn btn-secondary" href="{% url 'add' task.id %}"><i class="fa fa-star"></i></a> 
-                {% endif %}
-                
                 <button  data-toggle="modal" data-target="#updatemodal" class="btn btn-secondary" >Edit</button>
                 <button  data-toggle="modal" data-target="#deletemodal" class="btn btn-danger"><i class="fa fa-trash"></i></button>             
             </div>
-            <hr>
-             {% if task.detail %}  
-            <div class="alert alert-info alerts" style="background-color: #444; color: white;"> 
-           
-              {{ task.detail }} 
-            
-            </div>
-            {% endif %}
-            </div>
-            
+             </div>
+
          <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content" style="background-color: #222;">
@@ -78,6 +89,13 @@
             </div>
         </div>
 
+
+       {% empty %}
+            <div class="alert alert-danger"> No favourits Task!</div>
+            <div style="display: flex;justify-content: center;">
+              <img src="{% static 'images/note.svg' %}" style="width: 50%;">
+            </div>
        
+       {% endfor %}
   </div>
 {% endblock %}
