@@ -31,7 +31,7 @@
         </div>
               
   <div class="content">     
-    <div class="alert alert-info">
+    <div class="alert alert-secondary" style="width:80%;margin:auto;">
    <form class="form-inline my-2 my-lg-0" method="GET" action="/">
       <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
@@ -97,11 +97,9 @@
 
 
        {% empty %}
-           {% if search %}
-                  <h1> No results found !</h1><br>
-           {% else %}
-            <div class="alert alert-info"> Add task to show here !</div>
-              {% endif %}
+         
+            <div class="alert alert-info" style="margin-top:20px;"> Add task to show here !</div>
+           
             <div style="display: flex;justify-content: center;">
               <img src="{% static 'images/note.svg' %}" style="width: 50%;">
             </div>

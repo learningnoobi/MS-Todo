@@ -16,11 +16,6 @@ def home(request):
 	search = request.GET.get('search','')
 	if search:
 		tasks = tasks.filter(title__icontains=search).order_by("-created")
-
-		
-	
-	
-
 	if request.method == 'POST':
 		form = PostForm(request.POST or None)
 		if form.is_valid(): 
@@ -29,8 +24,7 @@ def home(request):
 			obj.author = request.user 
 			obj.save() 
 			form = PostForm() 
-		return redirect('home')
-            
+		return redirect('home')      
 	else:
 		form = PostForm()
 	context = {'tasks':tasks,"form":form,"side_tasks":side_tasks}
