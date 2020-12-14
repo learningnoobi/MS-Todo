@@ -14,9 +14,9 @@
   --background:#222;
 }
 .lightmode {
-  --btn:rgb(243, 227, 227);
-  --hover:rgb(128, 128, 202);
-  --ball: white;
+  --btn:rgb(247, 247, 247);
+  --hover:rgb(100, 100, 223);
+  --ball: rgb(83, 59, 189);
   --search:rgb(97, 102, 98);
   --sidebar:rgb(40, 52, 107);
   --text-color:black;
