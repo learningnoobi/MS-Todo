@@ -6,17 +6,19 @@
   --monst:'Montserrat', sans-serif;
   --red:rgb(224, 36, 94);
   --btn:white;
-  --ball: rgb(233, 67, 108);
+  --hover:rgb(104, 95, 95);
+  --ball: rgb(163, 154, 156);
   --search:gray;
   --sidebar:#333;
   --text-color:white;
   --background:#222;
 }
 .lightmode {
-  --btn:gray;
+  --btn:rgb(243, 227, 227);
+  --hover:rgb(128, 128, 202);
   --ball: white;
   --search:rgb(97, 102, 98);
-  --sidebar:rgb(29, 15, 51);
+  --sidebar:rgb(40, 52, 107);
   --text-color:black;
   --background:rgb(224, 213, 213);
 }
@@ -30,7 +32,7 @@ a{
   color: white;
 }
 a:hover{
-  color: gainsboro;
+  color: var(--hover);
   text-decoration: none;
 }
 .sidebar {
@@ -58,13 +60,13 @@ a:hover{
   font-weight: 800;
   font-size: 30px;
   border-radius: 50%;
-  background: #333;
+  background: var(--sidebar);
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
 .addtaskbtn:hover {
-  background: gray;
+  background: var(--hover);
 }
  
 .sidebar a.active {
@@ -73,7 +75,7 @@ a:hover{
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: var(--hover);
   color: white;
 }
 
@@ -88,23 +90,40 @@ a:hover{
 .down{
   border-bottom: 1px solid gray;
 }
+
 .alerts{
   width: 80%;
   margin: auto;
   border:none;
   margin-top: 16px;
 }
-@media screen and (max-width: 700px) {
+#open{
+  display: none;
+}
+#searchbar{
+  width:80%;
+  margin:auto;
+  background:var(--search);
+}
+@media screen and (max-width: 730px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
+  }
+  #searchbar{
+    width:90%;
+    margin:auto;
+    background:var(--search);
   }
   .down{
   border-bottom:none;
 }
   .todos{
     display: none;
+  }
+  #open{
+    display: block;
   }
   .sidebar a {
     float: left;
@@ -116,13 +135,32 @@ a:hover{
   .heading{
   display: block;
 }
+#logout{
+  display: none;
 }
-
+}
+#open{
+  display: none;
+}
 @media screen and (max-width: 501px) {
    .sidebar {
     width: 100%;
     height: auto;
     position: relative;
+  }
+  #searchbar{
+    width:100%;
+    margin:auto;
+    background:var(--search);
+  }
+  #dates{
+    display: none;
+  }
+  #logout{
+    display: none;
+  }
+  #open{
+    display: block;
   }
   .alerts{
   width: 100%;
