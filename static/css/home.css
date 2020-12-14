@@ -1,14 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Flamenco&family=Montserrat&display=swap");
 
-:root {
-  --flamenco: "Flamenco", cursive;
-  --monst: "Montserrat", sans-serif;
+
+:root{
+  --flamenco: 'Flamenco', cursive;
+  --monst:'Montserrat', sans-serif;
+  --red:rgb(224, 36, 94);
+  --btn:white;
+  --ball: rgb(233, 67, 108);
+  --search:gray;
+  --sidebar:#333;
+  --text-color:white;
+  --background:#222;
+}
+.lightmode {
+  --btn:gray;
+  --ball: white;
+  --search:rgb(97, 102, 98);
+  --sidebar:rgb(29, 15, 51);
+  --text-color:black;
+  --background:rgb(224, 213, 213);
 }
 body {
   margin: 0;
   font-family: var(--monst);
-  background: #222;
-
+  background-color: var(--background);
   color: snow;
 }
 a{
@@ -22,7 +37,7 @@ a:hover{
 
   color: white;
   width: 250px;
-  background-color: #333;
+  background-color: var(--sidebar);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -137,4 +152,48 @@ a:hover{
 }
 .imp:hover{
   color: red;
+}
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color:var(--btn);
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 21px;
+	width: 43px;
+	transform: scale(1.5);
+}
+.label .ball {
+	background-color:var(--ball);
+	border-radius: 50%;
+	position: absolute;
+	top: 1.5px;
+	left: 2px;
+	height: 18px;
+	width: 18px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(21px);
+}
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
+.dark-btn{
+  margin-top: 20px;
+  margin-left: 20px;
 }

@@ -1,10 +1,21 @@
+{% load static %}
 <div class="sidebar">
+<div class="dark-btn">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                  <img src="{% static 'images/sun.svg' %}" height="13px">
+                  <img src="{% static 'images/moon.svg' %}" height="13px"> 
+                  <div class="ball" id="dark-mode-toggle"></div>
+            </label>
+      </div>
       <a href="{% url 'home' %}" class="todos">MS Todo</a>
+  
+
       <a class="active" href="#home"><i class="fa fa-user" style="margin-right:10px;"></i><span class="name">{{request.user}}</span></a>
       <a href="{% url 'important' %}"><i class="fa fa-star" style="margin-right:10px;"></i><span class="name">Important</a>
       <a href="#contact" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus" style="margin-right:10px;"></i><span class="name">Tasks</span></a>
     <span class="todos">
-      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Recently Added(3)</a>
+      	<a class="active"><i class="fa fa-user" style="margin-right:10px;"></i>Recently Added tasks</a>
       	{% for task in side_tasks %}
           <a><i class="fa fa-bars" style="margin-right:10px;"></i>{{task.title}}</a>
           
@@ -13,4 +24,5 @@
           {% endfor %}
     </span>
        <a class="active" href="{% url 'logout' %}">Logout</a>
+      
 </div>
