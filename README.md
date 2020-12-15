@@ -15,8 +15,11 @@ advanced version of todo app . Clone of microsoft todo app<br>
 ####  CRUD Operations
 ####  Search tasks 
 #### User Authentication
-#### Bookmark Important task
+#### Bookmark Important task<br>
+##DarkMode
+![Screenshot (211)](https://user-images.githubusercontent.com/64244098/102172516-077a5500-3ec1-11eb-853f-c8b581a8f8d6.png)<br>
 
-![Screenshot (208)](https://user-images.githubusercontent.com/64244098/101395599-46713f00-38f2-11eb-92f0-580f48534ec2.png)
-<br>
-![Screenshot (209)](https://user-images.githubusercontent.com/64244098/101395791-89331700-38f2-11eb-9e53-4ee91d462c89.png)
+##LightMode
+![Screenshot (213)](https://user-images.githubusercontent.com/64244098/102172577-24168d00-3ec1-11eb-94d2-6566e33cebea.png)
+
+![Screenshot (212)](https://user-images.githubusercontent.com/64244098/102172626-3f819800-3ec1-11eb-8099-57fd3060869b.png)
