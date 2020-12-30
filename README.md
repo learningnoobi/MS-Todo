@@ -12,10 +12,13 @@ advanced version of todo app . Clone of microsoft todo app<br>
 <br>
 
 ### Functionality :
-####  CRUD Operations
-####  Search tasks 
-#### User Authentication
-#### Bookmark Important task<br>
+```
+ CRUD Operations
+ User Authentication
+ Search tasks 
+ Bookmark Important task<br>
+ ```
+ 
 ##DarkMode
 ![Screenshot (211)](https://user-images.githubusercontent.com/64244098/102172516-077a5500-3ec1-11eb-853f-c8b581a8f8d6.png)<br>
 
